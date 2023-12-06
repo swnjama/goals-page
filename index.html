@@ -58,7 +58,6 @@
     document.addEventListener('DOMContentLoaded', function () {
       const goalsList = document.querySelectorAll('.goalslist li');
 
-      // Load the completion state from localStorage
       goalsList.forEach(goal => {
         const goalId = goal.id;
         const isCompleted = localStorage.getItem(goalId) === 'true';
@@ -68,14 +67,13 @@
         }
       });
 
-      // Add click event listeners to toggle completion state
       goalsList.forEach(goal => {
         goal.addEventListener('click', function () {
           this.classList.toggle('completed');
           const goalId = this.id;
           const isCompleted = this.classList.contains('completed');
           
-          // Save the completion state to localStorage
+          
           localStorage.setItem(goalId, isCompleted);
         });
       });
