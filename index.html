@@ -1,19 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Goals</title>
 
-<h1>goals</h1>
-<h2>
-  - buy a bass  
-<br>
-  - buy an amp + cord
-<br> 
-  - start playing - period 
-<br> 
-  - learn basic music theory 
-<br>
-  - learn the names of the open strings
-<br> 
-  -Understand how to read bass tablature
-<br>
-- familiarize myself with the major scale and its pattern on the bass
-<br> 
-- start playing simple songs 
-</h2>
+    <style>
+      .title {
+        position: absolute;
+        top: -40px;
+        transform: skew(20deg);
+        font-size: 200px;
+      }
+
+      .goalslist {
+        margin: 20px auto;
+        position: absolute;
+        top: 300px;
+        left: 200px;
+        transform: skew(20deg);
+        font-size: 50px;
+      }
+      .completed {
+      text-decoration: line-through;
+      color: #888;
+    }
+    </style>
+  </head>
+  <body>
+
+    <h1 class="title">goals</h1>
+    <ul class="goalslist">
+      <li id="goal1"> buy a bass </li>
+      <li id="goal2"> buy an amp + cord </li>
+      <li id="goal3"> start playing - period </li>
+      <li id="goal4">learn basic music theory </li>
+      <li id="goal5"> learn the names of the open strings </li>
+      <li id="goal6"> understand how to read bass tablature </li>
+      <li id="goal7">familiarize myself with the major scale and its pattern on the bass
+      </li>
+      <li id="goal8"> start playing simple songs
+      </li>
+      <li id="goal9"> make my first recording
+      </li>
+    </ul>
+    <script>
+      const goalsList = document.querySelectorAll('.goalslist li');
+
+      goalsList.forEach(goal => {
+        goal.addEventListener('click', function() {
+          this.classList.toggle('completed');
+        });
+      });
+    </script>
+  </body>
+</html>
