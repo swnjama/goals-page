@@ -55,29 +55,29 @@
       </li>
     </ul>
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const goalsList = document.querySelectorAll('.goalslist li');
+      document.addEventListener('DOMContentLoaded', function() {
+        const goalsList = document.querySelectorAll('.goalslist li');
 
-      goalsList.forEach(goal => {
-        const goalId = goal.id;
-        const isCompleted = localStorage.getItem(goalId) === 'true';
+        goalsList.forEach(goal => {
+          const goalId = goal.id;
+          const isCompleted = localStorage.getItem(goalId) === 'true';
 
-        if (isCompleted) {
-          goal.classList.add('completed');
-        }
-      });
+          if (isCompleted) {
+            goal.classList.add('completed');
+          }
+        });
 
-      goalsList.forEach(goal => {
-        goal.addEventListener('click', function () {
-          this.classList.toggle('completed');
-          const goalId = this.id;
-          const isCompleted = this.classList.contains('completed');
-          
-          
-          localStorage.setItem(goalId, isCompleted);
+        goalsList.forEach(goal => {
+          goal.addEventListener('click', function() {
+            this.classList.toggle('completed');
+            const goalId = this.id;
+            const isCompleted = this.classList.contains('completed');
+
+
+            localStorage.setItem(goalId, isCompleted);
+          });
         });
       });
-    });
-  </script>
+    </script>
   </body>
 </html>
